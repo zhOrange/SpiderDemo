@@ -11,7 +11,7 @@ class DangBook:
         for item in items:
             #print(item)
             self.write_item_to_file(item)
-    
+    #获取response
     def request_dang(self, url):
         response = requests.get(url)
         try:
@@ -21,6 +21,8 @@ class DangBook:
                 return None
         except requests.RequestException:
             return None
+
+    # 解析html
     def parse_html(self, html):
         pattern = re.compile('<li>.*?list_num.*?(\d+).*?"name".*?title="(.+?)".*?"star".*?target.*?>(\d+).*?publisher_info.*?title="(.*?)".*?publisher_info.*?<a.*?target.*?>(.*?)</a>.*?<span.*?price_n">&yen;(.*?)</span>.*?</li>',re.S)
         #pattern = re.compile('<li>.*?list_num.*?(\d+).</div>.*?<img src=".*?".*?class="name".*?title="(.*?)">.*?class="star">.*?class="tuijian">(.*?)</span>.*?class="publisher_info">.*?target="_blank">(.*?)</a>.*?class="biaosheng">.*?<span>(.*?)</span></div>.*?<p><span\sclass="price_n">&yen;(.*?)</span>.*?</li>',re.S)
