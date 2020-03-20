@@ -5,7 +5,8 @@ from bs4 import BeautifulSoup
 
 class ABImages():
     def run(self, index):
-        imagePath = "D:\\ABicons\\"
+        #imagePath = "D:\\ABicons\\"
+        imagePath = "/home/zh/Pictures/ABicons"
         url = 'http://sc.adminbuy.cn/icon/list_1_{}.html'.format(str(index))
         print(url)
         html = self.__request_images(url)
@@ -14,6 +15,7 @@ class ABImages():
             self.__saveImages(soup, imagePath)
 
     def __request_images(self, url):
+        #指定headers
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'}
         response = requests.get(url, headers = headers)
         try:
@@ -23,6 +25,7 @@ class ABImages():
                 return None
         except requests.RequestException:
             return None
+    #根据返回内容,解析并存储图片.
     def __saveImages(self, soup, dirPath):
         if not soup:
             return
