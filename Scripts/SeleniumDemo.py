@@ -1,6 +1,9 @@
 from selenium import webdriver
 import sys
 class SeleniumDemo:
+    '''
+    SeleniumDemo
+    '''
     def demo(self):
         url = 'https://www.baidu.com'
         chrome = webdriver.Chrome()
