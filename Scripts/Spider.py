@@ -5,6 +5,9 @@ from SeleniumDemo import SeleniumDemo
 from ABImages import ABImages
 
 if __name__ == '__main__':
+    '''
+    main.
+    '''
     img = ABImages()
     for i in range(1, 15):
         time.sleep(1)
