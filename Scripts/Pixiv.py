@@ -13,6 +13,7 @@ class Pixiv():
     '''
         爬取Pixiv图片。
     '''
+    
 
     def __init__(self):
         self.base_url = 'https://accounts.pixiv.net/login?lang=zh&source=pc&view_type=page&ref=wwwtop_accounts_index'
