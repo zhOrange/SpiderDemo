@@ -7,7 +7,7 @@ class ABImages():
     def run(self, index):
         #定义本地存储地址
         #imagePath = "D:\\ABicons\\"
-        imagePath = "/home/zh/Pictures/ABicons"
+        imagePath = "/home/zh/Pictures/ABicons/"
         url = 'http://sc.adminbuy.cn/icon/list_1_{}.html'.format(str(index))
         print(url)
         html = self.__request_images(url)
