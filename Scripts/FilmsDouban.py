@@ -2,6 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 
 class FilmsDouban:
+    '''
+    爬取豆瓣电影top250.
+    '''
     def work(self, page):
         url = 'https://movie.douban.com/top250?start=' + str(page * 25) + '&filter='
         html = self.__requests_douban(url)
