@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 class ABImages():
     def run(self, index):
         #定义本地存储地址
-        #imagePath = "D:\\ABicons\\"
-        imagePath = "/home/zh/Pictures/ABicons/"
+        imagePath = "D:\\ABicons\\"
+        # imagePath = "/home/zh/Pictures/ABicons/"
         url = 'http://sc.adminbuy.cn/icon/list_1_{}.html'.format(str(index))
         print(url)
         html = self.__request_images(url)
@@ -39,4 +39,5 @@ class ABImages():
             nameStr = nameStr.replace('\\', '-')
             imageContent = requests.get(originurl+srcPath)
             image = Image.open(BytesIO(imageContent.content))
+            # image.show()
             image.save(dirPath + nameStr + ".png")
